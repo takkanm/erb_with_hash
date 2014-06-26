@@ -14,8 +14,24 @@ module ERBWithHash
   end
 
   def result_with_hash(hash)
-    b = HashAsBinding.new(hash).instance_eval {Kernel.binding}
+    b = create_binding_from_hash(hash)
     result(b)
+  end
+
+  private
+
+  def create_binding_from_hash(__hash__)
+    if binding.respond_to? :local_variable_set
+      __hash__.each_with_object(create_empty_binding) do |(k, v), b|
+        b.local_variable_set(k, v)
+      end
+    else
+      HashAsBinding.new(__hash__).instance_eval { Kernel.binding }
+    end
+  end
+
+  def create_empty_binding
+    BasicObject.new.instance_eval { Kernel.binding }
   end
 end
 
