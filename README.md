@@ -1,5 +1,7 @@
 # ERBWithHash
 
+[![Build Status](https://travis-ci.org/takkanm/erb_with_hash.svg&branch=master)](https://travis-ci.org/takkanm/erb_with_hash)
+
 allow Hash in ERB#result written by @seki.
 
 ## Installation
