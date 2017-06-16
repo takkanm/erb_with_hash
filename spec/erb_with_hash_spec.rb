@@ -1,9 +1,5 @@
 require_relative '../lib/erb_with_hash'
 
-class ERB
-  include ERBWithHash
-end
-
 RSpec.describe ERBWithHash do
   describe '#result_with_hash' do
     let(:template) {
