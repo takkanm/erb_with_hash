@@ -37,6 +37,10 @@ end
 
 require 'erb'
 
-class ERB
-  include ERBWithHash
+unless ERB.public_method_defined?(:result_with_hash)
+  class ERB
+    include ERBWithHash
+  end
+else
+  warn 'ERB#result_with_hash is already supported in original erb.'
 end
