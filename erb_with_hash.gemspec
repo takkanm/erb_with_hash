@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.name          = "erb_with_hash"
   spec.version       = ERBWithHash::VERSION
   spec.authors       = ['Masatoshi Seki']
-  spec.description   = 'Arrow Hash in ERB#result'
-  spec.summary       = 'Arrow Hash in ERB#result'
+  spec.description   = 'Allow Hash in ERB#result'
+  spec.summary       = 'Allow Hash in ERB#result'
   spec.homepage      = 'https://github.com/takkanm/erb_with_hash'
   spec.license       = 'MIT'
 
